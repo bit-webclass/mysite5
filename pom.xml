@@ -163,6 +163,9 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<compilerArgs>
+						<arg>-XX:MaxPermSize=128m</arg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
 			<plugin>

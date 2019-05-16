@@ -24,7 +24,7 @@
 					
 					<img id="profile" src="${pageContext.request.contextPath }/assets/images/profile.png" width="150px">
 					<p id="intro">
-						aaaaa안녕하세요.jenkins 성공!!!!<br> 
+						ㅁㅁaaaaa안녕하세요.jenkins 성공!!!!<br> 
 						홍길동의 mysite에 방문하신 것을<br/> 환영합니다.
 					</p>	
 					

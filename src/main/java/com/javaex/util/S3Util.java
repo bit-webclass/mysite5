@@ -8,9 +8,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
@@ -22,17 +19,14 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 @Component
 public class S3Util {
 
-	private String accessKey = "AKIA6NVIFZBCKXTFZUS7"; // 엑세스 키
-	private String secretKey = "MabGCXDMVG0RhC2TZ8/s19rM4a0GHtVCdy8anv7z"; // 보안 엑세스 키
-
 	private AmazonS3 s3;
 
 	// s3에 대한 기본 세팅
 	public S3Util() {
 
-		AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
-		s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(credentials))
-				.withRegion(Regions.AP_NORTHEAST_2).build();
+		s3 = AmazonS3ClientBuilder.standard()
+                .withRegion(Regions.AP_NORTHEAST_2)
+                .build();
 	}
 
 	// 버킷생성
